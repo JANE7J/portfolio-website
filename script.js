@@ -237,3 +237,34 @@ if (contactForm) {
         }
     });
 }
+
+/* POLISH - Floating Particles */
+const particlesContainer = document.getElementById('particles-container');
+if (particlesContainer) {
+    for (let i = 0; i < 60; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random size 3px-6px
+        const size = Math.random() * 3 + 3;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        
+        // Random opacity 0.15 to 0.4
+        const opacity = Math.random() * 0.25 + 0.15;
+        particle.style.backgroundColor = `rgba(212,175,55,${opacity})`;
+        
+        // Random horizontal start position
+        particle.style.left = `${Math.random() * 100}%`;
+        
+        // Random animation duration 6s-14s
+        const animDuration = Math.random() * 8 + 6;
+        particle.style.animationDuration = `${animDuration}s`;
+        
+        // Random animation delay
+        const animDelay = Math.random() * 10;
+        particle.style.animationDelay = `-${animDelay}s`;
+        
+        particlesContainer.appendChild(particle);
+    }
+}
